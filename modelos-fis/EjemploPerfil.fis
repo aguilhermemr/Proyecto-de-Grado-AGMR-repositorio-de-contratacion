@@ -1,0 +1,84 @@
+[System]
+Name='EjemploPerfil0'
+Type='mamdani'
+Version=2.0
+NumInputs=7
+NumOutputs=1
+NumRules=5
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='sum'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='PERSONALIDAD'
+Range=[0 1]
+NumMFs=3
+MF1='INSUFICIENTE1':'trimf',[-0.4 2.082e-17 0.4]
+MF2='SUFICIENTE':'trimf',[0.1 0.5 0.9]
+MF3='OPTIMO':'trapmf',[0.5 0.9 1.04 1.36]
+
+[Input2]
+Name='EXAMEN_TECNICO'
+Range=[0 1]
+NumMFs=3
+MF1='INSUFICIENTE':'trimf',[-0.4 0 0.4]
+MF2='SUFICIENTE':'trimf',[0.1 0.5 0.9]
+MF3='OPTMO':'trapmf',[0.5 0.9 1.04 1.36]
+
+[Input3]
+Name='HABILIDADES_COGNITIVAS'
+Range=[0 1]
+NumMFs=3
+MF1='INSUFICIENTE':'trimf',[-0.4 0 0.4]
+MF2='SUFICIENTE':'trimf',[0.1 0.5 0.9]
+MF3='OPTIMO':'trapmf',[0.5 0.9 1.04 1.36]
+
+[Input4]
+Name='PRETENSION_SALARIAL'
+Range=[0 1]
+NumMFs=3
+MF1='INSUFICIENTE':'trimf',[-0.4 0 0.4]
+MF2='SUFICIENTE':'trimf',[0.1 0.5 0.9]
+MF3='OPTIMO':'trapmf',[0.5 0.9 1.04 1.36]
+
+[Input5]
+Name='EXPERIENCIA'
+Range=[0 1]
+NumMFs=3
+MF1='INSUFICIENTE':'trimf',[-0.4 0 0.4]
+MF2='SUFICIENTE':'trimf',[0.102645502645503 0.502645502645503 0.902645502645503]
+MF3='OPTIMO':'trapmf',[0.5 0.9 1.04 1.36]
+
+[Input6]
+Name='INGLES'
+Range=[0 1]
+NumMFs=3
+MF1='BASICO':'trimf',[-0.4 2.082e-17 0.4]
+MF2='INTERMEDIO':'trimf',[0.1 0.5 0.9]
+MF3='AVANZADO':'trapmf',[0.5 0.9 1.04 1.36]
+
+[Input7]
+Name='FRANCES'
+Range=[0 1]
+NumMFs=3
+MF1='BASICO':'trimf',[-0.4 0 0.4]
+MF2='INTERMEDIO':'trimf',[0.1 0.5 0.9]
+MF3='AVANZADO':'trapmf',[0.5 0.9 1.04 1.36]
+
+[Output1]
+Name='PERFIL1'
+Range=[0 11.5]
+NumMFs=4
+MF1='Insuficiente':'trimf',[0 0 5.75]
+MF2='Suficiente':'trimf',[2.75 5.75 8.75]
+MF3='Optimo':'trimf',[5.75 11.5 16.99]
+MF4='Adecuado':'trimf',[5.75 8.75 11.5]
+
+[Rules]
+-3 -3 -3 -3 -3 0 0, 1 (1) : 2
+3 3 3 3 3 -3 -3, 2 (1) : 1
+3 3 3 3 3 3 -3, 4 (1) : 1
+3 3 3 3 3 -3 3, 4 (1) : 1
+3 3 3 3 3 3 3, 3 (1) : 1

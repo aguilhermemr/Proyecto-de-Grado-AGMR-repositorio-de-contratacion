@@ -1,0 +1,84 @@
+[System]
+Name='RHIDEL2811'
+Type='mamdani'
+Version=2.0
+NumInputs=8
+NumOutputs=1
+NumRules=5
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='INTEGRIDAD '
+Range=[1 10]
+NumMFs=2
+MF1='Insufieciente':'gaussmf',[3 1]
+MF2='Optimo':'gaussmf',[3 10]
+
+[Input2]
+Name='MADUREZ PERSONAL'
+Range=[1 10]
+NumMFs=2
+MF1='Insufieciente':'gaussmf',[3 1]
+MF2='Optimo':'gaussmf',[3 10]
+
+[Input3]
+Name='ENERGIA Y DINAMISMO'
+Range=[1 10]
+NumMFs=2
+MF1='Insufieciente':'gaussmf',[3 1]
+MF2='Optimo':'gaussmf',[3 10]
+
+[Input4]
+Name='CAPACIDAD DE ENERGIZAR A OTROS'
+Range=[1 10]
+NumMFs=2
+MF1='Insufieciente':'gaussmf',[3 1]
+MF2='Optimo':'gaussmf',[3 10]
+
+[Input5]
+Name='ENTEREZA'
+Range=[1 10]
+NumMFs=2
+MF1='Insufieciente':'gaussmf',[3 1]
+MF2='Optimo':'gaussmf',[3 10]
+
+[Input6]
+Name='CAPACIDAD DE EJECUTAR DE HACER LOS TRABAJO'
+Range=[1 10]
+NumMFs=2
+MF1='Insufieciente':'gaussmf',[3 1]
+MF2='Optimo':'gaussmf',[3 10]
+
+[Input7]
+Name='PASION'
+Range=[1 10]
+NumMFs=2
+MF1='Insufieciente':'gaussmf',[3 1]
+MF2='Optimo':'gaussmf',[3 10]
+
+[Input8]
+Name='PRETENSION SALARIAL'
+Range=[1 10]
+NumMFs=2
+MF1='Insufieciente':'gaussmf',[3 1]
+MF2='Optimo':'gaussmf',[3 10]
+
+[Output1]
+Name='Recomendacion'
+Range=[0 11]
+NumMFs=4
+MF1='Insuficiente':'trimf',[0 0 5.5]
+MF2='Suficiente':'trimf',[2.5 5.5 8.5]
+MF3='Adecuado1':'trimf',[5.25 8.25 11.25]
+MF4='Optimo':'trimf',[8 11 14]
+
+[Rules]
+-2 -2 -2 -2 -2 -2 0 0, 1 (1) : 2
+2 2 2 2 2 2 -2 -2, 2 (1) : 1
+2 2 2 2 2 2 -2 2, 3 (1) : 1
+2 2 2 2 2 2 2 -2, 3 (1) : 1
+2 2 2 2 2 2 2 2, 4 (1) : 1
